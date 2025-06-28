@@ -18,7 +18,6 @@
     "url": "https://github.com/imranucp/term-project-f24/issues"
   },
   "homepage": "https://github.com/imranucp/term-project-f24#readme",
-  "main": "index.js",
   "description": "",
   "devDependencies": {
     "htmlhint": "^1.6.3",
