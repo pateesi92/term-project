@@ -17,8 +17,9 @@ jobs:
 
       - run: npm install
 
-      # Ensure permissions for htmlhint binary
+      # Ensure permissions for htmlhint and stylelint binaries
       - run: chmod +x ./node_modules/.bin/htmlhint
+      - run: chmod +x ./node_modules/.bin/stylelint
 
       # Lint HTML and CSS using local binaries
       - run: ./node_modules/.bin/htmlhint "src/**/*.html"
