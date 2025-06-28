@@ -9,27 +9,33 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-      - uses: actions/setup-node@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
         with:
           node-version: '18'
 
-      - run: npm install
+      - name: Install dependencies
+        run: npm ci
 
-      # Ensure permissions for htmlhint and stylelint binaries
-      - run: chmod +x ./node_modules/.bin/htmlhint
-      - run: chmod +x ./node_modules/.bin/stylelint
+      - name: Give execute permissions to linters
+        run: |
+          chmod +x ./node_modules/.bin/htmlhint
+          chmod +x ./node_modules/.bin/stylelint
 
-      # Lint HTML and CSS using local binaries
-      - run: ./node_modules/.bin/htmlhint "src/**/*.html"
-      - run: ./node_modules/.bin/stylelint "src/**/*.css"
+      - name: Lint HTML
+        run: npm run lint:html
 
-      # Build using Parcel
-      - run: npm run build
+      - name: Lint CSS
+        run: npm run lint:css
 
-      # Deploy to development environment
-      - uses: peaceiris/actions-gh-pages@v3
+      - name: Build with Parcel
+        run: npm run build
+
+      - name: Deploy to GitHub Pages (development)
+        uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dev-dist
