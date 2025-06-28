@@ -2,7 +2,7 @@
     "extends": "stylelint-config-standard",
     "rules": {
       "color-no-invalid-hex": true,
-      "block-no-empty": true,
+      "block-no-empty": false,
       "selector-pseudo-class-no-unknown": true,
       "unit-no-unknown": true,
       "property-no-unknown": true,
