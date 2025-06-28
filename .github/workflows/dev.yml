@@ -16,6 +16,7 @@ jobs:
           node-version: '18'
 
       - run: npm install
+      - run: chmod +x ./node_modules/.bin/htmlhint
 
       - run: npx htmlhint src/
       - run: npx stylelint "**/*.css"
