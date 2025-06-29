@@ -1,20 +1,99 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 2rem;
-  background: #f4f4f4;
+  line-height: 1.6;
+  background-color: #f5f5f5;
   color: #333;
+  padding: 20px;
 }
 
-h1, h2, h3 {
-  color: #0a5ef5;
-}
-
-.btn {
-  display: inline-block;
-  background-color: #0a5ef5;
+/* Header */
+header {
+  background-color: #333;
   color: #fff;
-  padding: 0.5rem 1rem;
+  padding: 1rem 2rem;
+  text-align: center;
+}
+
+nav a {
+  color: #fff;
   text-decoration: none;
+  margin: 0 15px;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Hero section for Home */
+.hero {
+  background: linear-gradient(to right, #007BFF, #00C6FF);
+  color: white;
+  padding: 3rem;
+  text-align: center;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+
+/* Main content */
+main {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Section headings */
+h1, h2 {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+/* Buttons */
+button, .cta {
+  background-color: #007BFF;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
   border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover, .cta:hover {
+  background-color: #0056b3;
+}
+
+/* Forms */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input, textarea {
+  padding: 10px;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Portfolio images */
+.portfolio img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: 3rem;
+  padding: 1rem;
+  color: #777;
 }
