@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Services</title>
+  <link rel="stylesheet" href="styles/services.css" />
+</head>
+<body>
+  <header>
+    <h1>Our Services</h1>
+    <p>Explore what we offer to help your business grow.</p>
+  </header>
+
+  <section class="services">
+    <div class="service-card">
+      <h2>Web Development</h2>
+      <p>We build responsive and high-performance websites tailored to your needs.</p>
+    </div>
+
+    <div class="service-card">
+      <h2>SEO Optimization</h2>
+      <p>Improve your site's visibility on search engines with our expert SEO services.</p>
+    </div>
+
+    <div class="service-card">
+      <h2>Graphic Design</h2>
+      <p>Creative and professional designs to build a strong brand identity.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 YourCompany. All rights reserved.</p>
+  </footer>
+</body>
+</html>
