@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - develop
-      - feature/contact-page  # ✅ Your branch
+      - feature/contact-page  
   pull_request:
     branches:
       - develop
