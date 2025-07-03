@@ -1,11 +1,12 @@
-name: Production Deployment
+name: Staging Deployment
 
 on:
   push:
-    branches: [production]
+    branches:
+      - release/**
 
 jobs:
-  deploy-prod:
+  deploy-staging:
     runs-on: ubuntu-latest
 
     steps:
@@ -15,11 +16,20 @@ jobs:
           node-version: '18'
 
       - run: npm install
+      
+      # Ensure permissions for htmlhint and stylelint binaries
+      - run: chmod +x ./node_modules/.bin/htmlhint
+      - run: chmod +x ./node_modules/.bin/stylelint
+
+      # Lint HTML and CSS using local binaries
+      - run: ./node_modules/.bin/htmlhint "src/**/*.html"
+      - run: ./node_modules/.bin/stylelint "src/**/*.css"
       - run: npx htmlhint src/
       - run: npx stylelint "**/*.css"
-      - run: npx parcel build src/index.html --dist-dir prod-dist
+      - run: npx parcel build src/index.html --dist-dir staging-dist
 
       - uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./prod-dist
+          publish_dir: ./staging-dist
+          destination_dir: staging
